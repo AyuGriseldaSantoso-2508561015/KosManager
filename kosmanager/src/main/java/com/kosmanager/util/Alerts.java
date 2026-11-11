@@ -1,6 +1,7 @@
 package com.kosmanager.util;
 
 import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 
 public class Alerts {
     private Alerts() {}
@@ -23,7 +24,13 @@ public class Alerts {
         alert.showAndWait();
     }
 
+    // menampilkan pesan konfirmasi
+    public static boolean konfirmasi(String pesan) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION, pesan, ButtonType.YES, ButtonType.NO);
+        alert.setTitle("konfirmasi");
+        alert.setHeaderText(null);
 
-
-
+        // mengembalikan nilai true
+        return alert.showAndWait().orElse(ButtonType.NO) == ButtonType.YES;
+    }
 }
