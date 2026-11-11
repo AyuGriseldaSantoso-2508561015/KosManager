@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<VBox fx:controller="kosmanager.controller.DashboardController" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" spacing="16" prefWidth="860" prefHeight="640" style="-fx-background-color: #F4F6FA;"><padding><Insets top="20" right="24" bottom="20" left="24" /></padding>
+   <VBox spacing="2">
+   <Label text="Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" />
+   <Label text="Ringkasan kondisi kos hari ini" style="-fx-font-size: 12px; -fx-text-fill: #64748B;" />
+</VBox>
+   <HBox spacing="16">
+      <VBox HBox.hgrow="ALWAYS" spacing="4" style="-fx-background-color: #16A34A; -fx-background-radius: 10;"><padding><Insets top="16" right="16" bottom="16" left="16" /></padding>
+      <Label text="Kamar Kosong" style="-fx-text-fill: white; -fx-font-size: 12px;" />
+      <Label fx:id="lblKamarKosong" text="0" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" /></VBox>
+      <VBox HBox.hgrow="ALWAYS" spacing="4" style="-fx-background-color: #2563EB; -fx-background-radius: 10;"><padding><Insets top="16" right="16" bottom="16" left="16" /></padding>
+      <Label text="Kamar Terisi" style="-fx-text-fill: white; -fx-font-size: 12px;" />
+      <Label fx:id="lblKamarTerisi" text="0" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" /></VBox>
+      <VBox HBox.hgrow="ALWAYS" spacing="4" style="-fx-background-color: #9333EA; -fx-background-radius: 10;"><padding><Insets top="16" right="16" bottom="16" left="16" /></padding>
+      <Label text="Total Penyewa" style="-fx-text-fill: white; -fx-font-size: 12px;" />
+      <Label fx:id="lblTotalPenyewa" text="0" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" /></VBox>
+      <VBox HBox.hgrow="ALWAYS" spacing="4" style="-fx-background-color: #EA580C; -fx-background-radius: 10;"><padding><Insets top="16" right="16" bottom="16" left="16" /></padding>
+      <Label text="Transaksi Belum Lunas" style="-fx-text-fill: white; -fx-font-size: 12px;" />
+      <Label fx:id="lblBelumLunas" text="0" style="-fx-text-fill: white; -fx-font-size: 30px; -fx-font-weight: bold;" /></VBox>
+   </HBox>
+   <Label text="Transaksi Terbaru" style="-fx-font-size: 14px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" />
+   <TableView fx:id="tblTransaksiTerbaru" VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS"><columns><TableColumn prefWidth="60" text="ID" /><TableColumn prefWidth="180" text="Penyewa" /><TableColumn prefWidth="90" text="Kamar" /><TableColumn prefWidth="100" text="Durasi (bln)" /><TableColumn prefWidth="140" text="Total Biaya" /><TableColumn prefWidth="110" text="Status" /><TableColumn prefWidth="120" text="Tanggal" /></columns><columnResizePolicy><TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /></columnResizePolicy></TableView>
+</VBox>
