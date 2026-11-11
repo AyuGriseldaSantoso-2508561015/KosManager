@@ -3,7 +3,7 @@ package com.kosmanager.util;
 import javafx.scene.control.Alert;
 
 public class Alerts {
-    private Alerts() { }
+    private Alerts() {}
 
     // menampilkan pesan informasi
     public static void info(String pesan) {
