@@ -1,7 +1,7 @@
 package com.kosmanager.model;
 
-import kosmanager.dao.TransaksiDAO;
-import kosmanager.util.Format;
+import com.kosmanager.dao.TransaksiDAO;
+import com.kosmanager.util.Format;
 
 import java.time.LocalDate;
 
