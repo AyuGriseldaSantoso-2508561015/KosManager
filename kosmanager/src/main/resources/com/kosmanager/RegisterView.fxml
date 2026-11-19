@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.RegisterController">
+   <children>
+      <Label layoutX="202.0" layoutY="24.0" text="REGISTER AKUN KOST">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="114.0" layoutY="68.0" text="Email" />
+      <Label layoutX="115.0" layoutY="112.0" text="Username" />
+      <Label layoutX="118.0" layoutY="159.0" text="Password" />
+      <Label layoutX="118.0" layoutY="208.0" text="Konfirmasi Password" />
+      <TextField fx:id="txtRegEmail" layoutX="267.0" layoutY="63.0" promptText="Masukkan Email" />
+      <TextField fx:id="txtRegUsername" layoutX="267.0" layoutY="107.0" promptText="Masukkan Username" />
+      <PasswordField fx:id="txtRegPassword" layoutX="267.0" layoutY="154.0" promptText="Masukkan Password" />
+      <PasswordField fx:id="txtRegConfirmPassword" layoutX="267.0" layoutY="203.0" promptText="Konfirmasi Password" />
+      <Button fx:id="btnRegister" layoutX="267.0" layoutY="251.0" mnemonicParsing="false" onAction="#handleRegister" text="Daftar" />
+      <Hyperlink fx:id="linkLogin" layoutX="352.0" layoutY="253.0" onAction="#handleGoToLogin" text="Sudah punya akun?" />
+   </children>
+</AnchorPane>
