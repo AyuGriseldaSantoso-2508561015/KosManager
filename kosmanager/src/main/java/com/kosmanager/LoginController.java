@@ -50,15 +50,15 @@ public class LoginController {
                 showAlert(Alert.AlertType.INFORMATION, "Login Berhasil", "Selamat datang, " + username + " (" + role + ")!");
 
                 try {
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/kosmanager/PembayaranView.fxml"));
+                    FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/kosmanager/DashboardView.fxml"));
                     Parent root = loader.load();
                     Stage stage = (Stage) txtUsername.getScene().getWindow();
                     stage.setScene(new Scene(root));
-                    stage.setTitle("KosManager - Pembayaran");
+                    stage.setTitle("KosManager - Dashboard");
                     stage.centerOnScreen();
                 } catch (IOException e) {
                     e.printStackTrace();
-                    showAlert(Alert.AlertType.ERROR, "Error", "Gagal membuka halaman Pembayaran: " + e.getMessage());
+                    showAlert(Alert.AlertType.ERROR, "Error", "Gagal membuka halaman Dashboard: " + e.getMessage());
                 }
             } else {
                 showAlert(Alert.AlertType.ERROR, "Login Gagal", "Username atau Password salah!");
