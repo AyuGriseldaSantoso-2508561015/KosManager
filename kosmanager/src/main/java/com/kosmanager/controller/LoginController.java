@@ -1,4 +1,4 @@
-package com.kosmanager;
+package com.kosmanager.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -38,7 +38,7 @@ public class LoginController {
 
         String query = "SELECT * FROM `user` WHERE username = ? AND password = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, username);

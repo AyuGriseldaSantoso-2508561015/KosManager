@@ -1,4 +1,4 @@
-package com.kosmanager;
+package com.kosmanager.controller;
 
 import java.io.IOException;
 import java.sql.Connection;
@@ -46,7 +46,7 @@ public class RegisterController {
 
         String query = "INSERT INTO `user` (username, password, role) VALUES (?, ?, 'admin')";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
 
             stmt.setString(1, username);

@@ -1,4 +1,4 @@
-package com.kosmanager;
+package com.kosmanager.controller;
 
 import java.net.URL;
 import java.sql.Connection;
