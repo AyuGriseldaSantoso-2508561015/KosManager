@@ -127,6 +127,30 @@ public class KamarDAO implements BaseDAO<Kamar> {
         return daftarKamar;
     }
 
+    public List<Kamar> cariSemua() {
+        return ambilSemua();
+    }
+
+    public List<Kamar> cariKosong() {
+        return ambilKamarKosong();
+    }
+
+    public int hitungByStatus(String status) {
+        String sql = "SELECT COUNT(*) FROM kamar WHERE status = ?";
+        try (Connection conn = DBConnection.getConnection();
+             PreparedStatement ps = conn.prepareStatement(sql)) {
+            ps.setString(1, status);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return rs.getInt(1);
+                }
+            }
+        } catch (SQLException e) {
+            throw new DatabaseException("Gagal menghitung status kamar.", e);
+        }
+        return 0;
+    }
+
     public void ubahStatus(int idKamar, String statusBaru) {
         String sql = "UPDATE kamar SET status = ? WHERE id_kamar = ?";
 

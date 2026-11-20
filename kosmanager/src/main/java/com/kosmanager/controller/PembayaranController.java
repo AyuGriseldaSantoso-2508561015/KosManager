@@ -1,5 +1,6 @@
 package com.kosmanager.controller;
-
+import com.kosmanager.model.Pembayaran;
+import com.kosmanager.util.DBConnection;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.Date;
@@ -80,7 +81,7 @@ private final NumberFormat rupiahFormat = NumberFormat.getCurrencyInstance(Local
                      "JOIN kamar k ON t.id_kamar = k.id_kamar " +
                      "ORDER BY t.id_transaksi DESC";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -112,7 +113,7 @@ private final NumberFormat rupiahFormat = NumberFormat.getCurrencyInstance(Local
                      "JOIN kamar k ON t.id_kamar = k.id_kamar " +
                      "ORDER BY pb.id_pembayaran DESC";
 
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
@@ -185,7 +186,7 @@ private final NumberFormat rupiahFormat = NumberFormat.getCurrencyInstance(Local
         String insertSql = "INSERT INTO pembayaran (id_transaksi, jumlah_bayar, tanggal_bayar, metode_pembayaran, status) VALUES (?, ?, ?, ?, ?)";
         String updateTransaksiSql = "UPDATE transaksi_sewa SET status_pembayaran = ? WHERE id_transaksi = ?";
 
-        try (Connection conn = DatabaseConnection.getConnection()) {
+        try (Connection conn = DBConnection.getConnection()) {
             conn.setAutoCommit(false);
 
             try (PreparedStatement psInsert = conn.prepareStatement(insertSql);

@@ -1,5 +1,6 @@
 package com.kosmanager.controller;
 
+import com.kosmanager.util.DBConnection;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

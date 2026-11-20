@@ -1,4 +1,4 @@
-package com.kosmanager;
+package com.kosmanager.model;
 
 public class Pembayaran {
     private int idPembayaran;

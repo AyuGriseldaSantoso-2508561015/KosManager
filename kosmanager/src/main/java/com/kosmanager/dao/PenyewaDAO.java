@@ -53,8 +53,26 @@ public class PenyewaDAO implements BaseDAO<Penyewa> {
         }
     }
 
+   @Override
+    public Penyewa cariById(int id) {
+        String sql = "SELECT id_penyewa, nama, no_wa, no_ktp FROM penyewa WHERE id_penyewa=?";
+        try (Connection c = DBConnection.getConnection();
+             PreparedStatement ps = c.prepareStatement(sql)) {
+            ps.setInt(1, id);
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next()) {
+                    return new Penyewa(rs.getInt("id_penyewa"), rs.getString("nama"),
+                            rs.getString("no_wa"), rs.getString("no_ktp"));
+                }
+            }
+            return null;
+        } catch (SQLException e) {
+            throw new DatabaseException("Gagal mencari penyewa: " + e.getMessage(), e);
+        }
+    }
+
     @Override
-    public List<Penyewa> cariSemua() {
+    public List<Penyewa> ambilSemua() {
         List<Penyewa> hasil = new ArrayList<>();
         String sql = "SELECT id_penyewa, nama, no_wa, no_ktp FROM penyewa ORDER BY nama";
         try (Connection c = DBConnection.getConnection();
@@ -69,4 +87,9 @@ public class PenyewaDAO implements BaseDAO<Penyewa> {
             throw new DatabaseException("Gagal membaca data penyewa: " + e.getMessage(), e);
         }
     }
+
+    public List<Penyewa> cariSemua() {
+        return ambilSemua();
+    }
 }
+

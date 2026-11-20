@@ -28,4 +28,8 @@ public class Login {
     public static int getUserId() {
         return userAktif == null ? 1 : userAktif.getIdUser();
     }
+
+    public static int getAdminId() {
+        return getUserId();
+    }
 }

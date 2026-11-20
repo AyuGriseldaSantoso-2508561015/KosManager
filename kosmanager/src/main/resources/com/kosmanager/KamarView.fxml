@@ -12,7 +12,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="1000.0" spacing="16.0"
       xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.kosmanager.KamarController">
+      fx:controller="com.kosmanager.controller.KamarController">
    <children>
       <VBox>
          <children>

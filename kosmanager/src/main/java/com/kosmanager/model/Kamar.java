@@ -26,6 +26,10 @@ public abstract class Kamar {
     // Method abstract untuk polymorphism perhitungan total harga sewa per bulan
     public abstract double hitungHargaTotal();
 
+    public double hitungTotalBiaya(int durasi) {
+        return hitungHargaTotal() * durasi;
+    }
+
     public int getIdKamar() {
         return idKamar;
     }

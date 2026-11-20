@@ -103,8 +103,12 @@ public class TransaksiDAO implements BaseDAO<TransaksiSewa> {
     }
 
     @Override
-    public List<TransaksiSewa> cariSemua() {
+    public List<TransaksiSewa> ambilSemua() {
         return query(SELECT + "ORDER BY t.id_transaksi DESC");
+    }
+
+    public List<TransaksiSewa> cariSemua() {
+        return ambilSemua();
     }
 
     public List<TransaksiSewa> cariTerbaru(int batas) {
@@ -115,6 +119,7 @@ public class TransaksiDAO implements BaseDAO<TransaksiSewa> {
         return query(SELECT + "WHERE t.status_pembayaran = 'Belum Lunas' ORDER BY t.id_transaksi DESC");
     }
 
+    @Override
     public TransaksiSewa cariById(int id) {
         for (TransaksiSewa t : query(SELECT + "WHERE t.id_transaksi = " + id)) return t;
         return null;

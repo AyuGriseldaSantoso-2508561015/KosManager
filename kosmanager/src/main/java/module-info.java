@@ -5,5 +5,13 @@ module com.kosmanager {
     requires mysql.connector.j;
 
     opens com.kosmanager to javafx.fxml;
+    opens com.kosmanager.controller to javafx.fxml;
+    opens com.kosmanager.model to javafx.base, javafx.fxml;
+
     exports com.kosmanager;
+    exports com.kosmanager.controller;
+    exports com.kosmanager.dao;
+    exports com.kosmanager.model;
+    exports com.kosmanager.service;
+    exports com.kosmanager.util;
 }

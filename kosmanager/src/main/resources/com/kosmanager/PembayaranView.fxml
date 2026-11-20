@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.PembayaranController">
+<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.PembayaranController">
    <padding>
       <Insets bottom="20" left="24" right="24" top="20" />
    </padding>
