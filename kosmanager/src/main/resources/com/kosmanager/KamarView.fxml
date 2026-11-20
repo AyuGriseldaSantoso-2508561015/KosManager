@@ -10,37 +10,23 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity"
-      maxWidth="-Infinity"
-      minHeight="-Infinity"
-      minWidth="-Infinity"
-      prefHeight="640.0"
-      prefWidth="1000.0"
-      spacing="16.0"
-      xmlns="http://javafx.com/javafx/21"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.kosmanager.controller.KamarController">
+<VBox minHeight="0.0" minWidth="0.0" fillWidth="true" spacing="16.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.KamarController">
 
-    <children>
+<children>
 
-        <!-- JUDUL -->
-        <VBox spacing="2.0">
-            <children>
-                <Label text="Kelola Kamar"
-                       prefWidth="800.0"
-                       style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #263A38;"/>
+<VBox spacing="2.0">
+ <children>
+  <Label text="Kelola Kamar" maxWidth="-Infinity" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #263A38;"/>
 
-                <Label text="Tambah, Lihat, Ubah, dan Hapus Data Kamar"
-                       style="-fx-text-fill: #263A38; -fx-font-size: 12px;"/>
+                <Label text="Tambah, Lihat, Ubah, dan Hapus Data Kamar" style="-fx-text-fill: #263A38; -fx-font-size: 12px;"/>
+            
             </children>
         </VBox>
 
-        <!-- KONTEN -->
         <HBox spacing="16.0" VBox.vgrow="ALWAYS">
 
             <children>
 
-                <!-- TABEL KAMAR -->
                 <VBox spacing="8.0" HBox.hgrow="ALWAYS">
 
                     <children>
@@ -48,40 +34,26 @@
                         <HBox spacing="8.0">
                             <children>
 
-                                <TextField fx:id="txtCariKamar"
-                                           promptText="Cari nomor atau tipe kamar..."
-                                           HBox.hgrow="ALWAYS"/>
+                                <TextField fx:id="txtCariKamar" promptText="Cari nomor atau tipe kamar..." HBox.hgrow="ALWAYS"/>
 
-                                <ComboBox fx:id="cbFilterStatus"
-                                          minWidth="130.0"
-                                          promptText="Semua Status"/>
+                                <ComboBox fx:id="cbFilterStatus" minWidth="130.0" promptText="Semua Status"/>
 
                             </children>
                         </HBox>
 
-                        <TableView fx:id="tblKamar"
-                                   VBox.vgrow="ALWAYS">
+                        <TableView fx:id="tblKamar" VBox.vgrow="ALWAYS">
 
                             <columns>
-                                <TableColumn fx:id="colId"
-                                             prefWidth="50.0"
-                                             text="ID"/>
+                                <TableColumn fx:id="colId" prefWidth="50.0" text="ID"/>
 
-                                <TableColumn fx:id="colNomor"
-                                             prefWidth="90.0"
-                                             text="No. Kamar"/>
+                                <TableColumn fx:id="colNomor" prefWidth="90.0" text="No. Kamar"/>
 
-                                <TableColumn fx:id="colTipe"
-                                             prefWidth="80.0"
-                                             text="Tipe"/>
+                                <TableColumn fx:id="colTipe" prefWidth="80.0" text="Tipe"/>
 
-                                <TableColumn fx:id="colHarga"
-                                             prefWidth="160.0"
-                                             text="Harga Sewa / Bulan"/>
+                                <TableColumn fx:id="colHarga" prefWidth="160.0" text="Harga Sewa / Bulan"/>
 
-                                <TableColumn fx:id="colStatus"
-                                             prefWidth="90.0"
-                                             text="Status"/>
+                                <TableColumn fx:id="colStatus" prefWidth="90.0" text="Status"/>
+                            
                             </columns>
 
                             <columnResizePolicy>
@@ -93,99 +65,65 @@
                     </children>
                 </VBox>
 
-                <!-- FORM KAMAR -->
-                <VBox minWidth="280.0"
-                      prefWidth="280.0"
-                      spacing="12.0"
-                      style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+                <VBox minWidth="280.0" prefWidth="280.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
 
                     <children>
 
-                        <Label text="Form Kamar"
-                               style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                        <Label text="Form Kamar" style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
 
                         <VBox spacing="4.0">
                             <children>
-                                <Label text="Nomor Kamar"
-                                       style="-fx-font-size: 12px;"/>
+                                <Label text="Nomor Kamar" style="-fx-font-size: 12px;"/>
 
-                                <TextField fx:id="txtNomorKamar"
-                                           promptText="Contoh: A01"/>
+                                <TextField fx:id="txtNomorKamar" promptText="Contoh: A01"/>
+                            
                             </children>
                         </VBox>
 
                         <VBox spacing="4.0">
                             <children>
-                                <Label text="Tipe Kamar"
-                                       style="-fx-font-size: 12px;"/>
+                                <Label text="Tipe Kamar" style="-fx-font-size: 12px;"/>
 
-                                <ComboBox fx:id="cbTipeKamar"
-                                          maxWidth="Infinity"
-                                          promptText="Pilih Tipe"/>
+                                <ComboBox fx:id="cbTipeKamar" maxWidth="Infinity" promptText="Pilih Tipe"/>
                             </children>
                         </VBox>
 
                         <VBox spacing="4.0">
                             <children>
-                                <Label text="Harga Sewa / Bulan (Rp)"
-                                       style="-fx-font-size: 12px;"/>
+                                <Label text="Harga Sewa / Bulan (Rp)" style="-fx-font-size: 12px;"/>
 
-                                <TextField fx:id="txtHargaSewa"
-                                           promptText="Contoh: 800000"/>
+                                <TextField fx:id="txtHargaSewa" promptText="Contoh: 800000"/>
                             </children>
                         </VBox>
 
                         <VBox spacing="4.0">
                             <children>
-                                <Label text="Biaya Fasilitas VIP (Rp)"
-                                       style="-fx-font-size: 12px;"/>
+                                <Label text="Biaya Fasilitas VIP (Rp)" style="-fx-font-size: 12px;"/>
 
-                                <TextField fx:id="txtBiayaFasilitas"
-                                           promptText="Khusus VIP"/>
+                                <TextField fx:id="txtBiayaFasilitas" promptText="Khusus VIP"/>
                             </children>
                         </VBox>
 
                         <VBox spacing="4.0">
                             <children>
                                 <Label text="Status"/>
-
-                                <ComboBox fx:id="cbStatusKamar"
-                                          maxWidth="Infinity"
-                                          promptText="Pilih Status"/>
+                                
+                                <ComboBox fx:id="cbStatusKamar" maxWidth="Infinity" promptText="Pilih Status"/>
                             </children>
                         </VBox>
 
-                        <Button fx:id="btnTambahKamar"
-                                maxWidth="Infinity"
-                                mnemonicParsing="false"
-                                style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                                text="Tambah"/>
+                        <Button fx:id="btnTambahKamar" maxWidth="Infinity" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Tambah"/>
 
-                        <Button fx:id="btnUbahKamar"
-                                maxWidth="Infinity"
-                                mnemonicParsing="false"
-                                style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                                text="Ubah"/>
+                        <Button fx:id="btnUbahKamar" maxWidth="Infinity" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Ubah"/>
 
-                        <Button fx:id="btnHapusKamar"
-                                maxWidth="Infinity"
-                                mnemonicParsing="false"
-                                style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                                text="Hapus"/>
+                        <Button fx:id="btnHapusKamar" maxWidth="Infinity" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Hapus"/>
 
-                        <Button fx:id="btnBersihkanKamar"
-                                maxWidth="Infinity"
-                                mnemonicParsing="false"
-                                style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                                text="Bersihkan"/>
+                        <Button fx:id="btnBersihkanKamar" maxWidth="Infinity" mnemonicParsing="false" style="-fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Bersihkan"/>
 
                     </children>
 
                     <padding>
-                        <Insets bottom="16.0"
-                                left="16.0"
-                                right="16.0"
-                                top="16.0"/>
+                        <Insets bottom="16.0" left="16.0" right="16.0" top="16.0"/>
                     </padding>
 
                 </VBox>
@@ -196,10 +134,7 @@
     </children>
 
     <padding>
-        <Insets bottom="20.0"
-                left="24.0"
-                right="24.0"
-                top="20.0"/>
+        <Insets bottom="20.0" left="24.0" right="24.0" top="20.0"/>
     </padding>
 
 </VBox>

@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.TransaksiController"><padding><Insets bottom="20" left="24" right="24" top="20" /></padding>
+<VBox minHeight="0.0" minWidth="0.0" spacing="16" fillWidth="true" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.TransaksiController"><padding><Insets bottom="20" left="24" right="24" top="20" /></padding>
    <VBox spacing="2">
    <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" text="Transaksi Sewa" />
    <Label style="-fx-font-size: 12px; -fx-text-fill: #64748B;" text="Catat penyewaan kamar baru" />
 </VBox>
-   <HBox spacing="16" VBox.vgrow="ALWAYS">
-      <VBox minWidth="320" prefWidth="320" spacing="12" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);"><padding><Insets bottom="16" left="16" right="16" top="16" /></padding>
+   <HBox spacing="16" minWidth="0.0" minHeight="0.0" VBox.vgrow="ALWAYS">
+      <VBox minWidth="280" prefWidth="320" maxWidth="360" spacing="12" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);"><padding><Insets bottom="16" left="16" right="16" top="16" /></padding>
          <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Transaksi Baru" />
          <VBox spacing="4">
    <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="Penyewa" />
