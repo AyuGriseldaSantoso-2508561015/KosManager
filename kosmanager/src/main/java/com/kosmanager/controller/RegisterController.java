@@ -1,11 +1,8 @@
 package com.kosmanager.controller;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
-import com.kosmanager.util.DBConnection;
+import com.kosmanager.service.Register;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,67 +24,68 @@ public class RegisterController {
     @FXML
     private PasswordField txtRegConfirmPassword;
 
+    private final Register register = new Register();
+
     @FXML
     private void handleRegister() {
-        String username = txtRegUsername.getText();
+
+        String username = txtRegUsername.getText().trim();
         String password = txtRegPassword.getText();
         String confirmPassword = txtRegConfirmPassword.getText();
 
-        // Validasi kolom kosong
-        if (username.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+        // validasi kolom kosong
+        if (username.isEmpty() || password.isEmpty()
+                || confirmPassword.isEmpty()) {
+
             showAlert(Alert.AlertType.ERROR, "Register Gagal",
                     "Semua kolom wajib diisi!");
             return;
         }
 
-        // Validasi konfirmasi password
+        // validasi konfirmasi password
         if (!password.equals(confirmPassword)) {
+
             showAlert(Alert.AlertType.ERROR, "Register Gagal",
                     "Konfirmasi password tidak cocok!");
             return;
         }
 
-        // Query untuk menyimpan akun admin
-        String query = "INSERT INTO `user` (username, password, role) VALUES (?, ?, 'admin')";
+        // proses registrasi melalui Register.java
+        boolean berhasil = register.proses(username, password);
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
-
-            stmt.setString(1, username);
-            stmt.setString(2, password);
-            stmt.executeUpdate();
+        if (berhasil) {
 
             showAlert(Alert.AlertType.INFORMATION, "Register Berhasil",
-                    "Akun " + username + " berhasil disimpan ke database! Silakan login.");
+                    "Akun " + username
+                    + " berhasil disimpan! Silakan login.");
 
             handleGoToLogin();
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } else {
 
-            if (e.getErrorCode() == 1062) {
-                showAlert(Alert.AlertType.ERROR, "Register Gagal",
-                        "Username '" + username + "' sudah digunakan!");
-            } else {
-                showAlert(Alert.AlertType.ERROR, "Database Error",
-                        "Gagal menyimpan data: " + e.getMessage());
-            }
+            showAlert(Alert.AlertType.ERROR, "Register Gagal",
+                    "Username sudah digunakan atau terjadi kesalahan database!");
         }
     }
 
     @FXML
     private void handleGoToLogin() {
+
         try {
+
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/com/kosmanager/LoginView.fxml"));
+                    getClass().getResource(
+                            "/com/kosmanager/LoginView.fxml"));
 
             Parent root = loader.load();
 
             Stage stage = (Stage) txtRegUsername.getScene().getWindow();
+
             stage.setScene(new Scene(root));
             stage.setTitle("Login Kos Manager");
 
         } catch (IOException e) {
+
             e.printStackTrace();
 
             showAlert(Alert.AlertType.ERROR, "Error",
@@ -95,7 +93,9 @@ public class RegisterController {
         }
     }
 
-    private void showAlert(Alert.AlertType type, String title, String header) {
+    private void showAlert(Alert.AlertType type,
+                           String title, String header) {
+
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(header);

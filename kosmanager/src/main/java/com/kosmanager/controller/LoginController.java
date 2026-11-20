@@ -1,11 +1,6 @@
 package com.kosmanager.controller;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import com.kosmanager.util.DBConnection;
+import com.kosmanager.service.Login;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -28,80 +23,80 @@ public class LoginController {
     @FXML
     private Button btnLogin;
 
+    private final Login login = new Login();
+
     @FXML
     private void handleLogin() {
-        String username = txtUsername.getText();
+
+        String username = txtUsername.getText().trim();
         String password = txtPassword.getText();
 
+        // Validasi kolom kosong
         if (username.isEmpty() || password.isEmpty()) {
+
             showAlert(Alert.AlertType.ERROR, "Login Gagal",
                     "Username dan Password tidak boleh kosong!");
             return;
         }
 
-        String query = "SELECT * FROM `user` WHERE username = ? AND password = ?";
+        // Proses login melalui Login.java dan UserDAO.java
+        boolean berhasil = login.proses(username, password);
 
-        try (Connection conn = DBConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(query)) {
+        if (berhasil) {
 
-            stmt.setString(1, username);
-            stmt.setString(2, password);
+            showAlert(Alert.AlertType.INFORMATION, "Login Berhasil",
+                    "Selamat datang, " + username + "!");
 
-            ResultSet rs = stmt.executeQuery();
+            try {
 
-            if (rs.next()) {
-                String role = rs.getString("role");
+                // Membuka Main Layout
+                FXMLLoader loader = new FXMLLoader(
+                        getClass().getResource(
+                                "/com/kosmanager/MainLayout.fxml")
+                );
 
-                showAlert(Alert.AlertType.INFORMATION, "Login Berhasil",
-                        "Selamat datang, " + username + " (" + role + ")!");
+                Parent root = loader.load();
 
-                try {
-                    // Membuka Main Layout
-                    FXMLLoader loader = new FXMLLoader(
-                            getClass().getResource("/com/kosmanager/MainLayout.fxml")
-                    );
+                Stage stage = (Stage) txtUsername.getScene().getWindow();
 
-                    Parent root = loader.load();
+                stage.setScene(new Scene(root));
+                stage.setTitle("KosManager");
+                stage.centerOnScreen();
 
-                    Stage stage = (Stage) txtUsername.getScene().getWindow();
-                    stage.setScene(new Scene(root));
-                    stage.setTitle("KosManager");
-                    stage.centerOnScreen();
+            } catch (Exception e) {
 
-                } catch (Exception e) {
-                    e.printStackTrace();
+                e.printStackTrace();
 
-                    showAlert(Alert.AlertType.ERROR, "Error",
-                            "Gagal membuka Main Layout: " + e.getMessage());
-                }
-
-            } else {
-                showAlert(Alert.AlertType.ERROR, "Login Gagal",
-                        "Username atau Password salah!");
+                showAlert(Alert.AlertType.ERROR, "Error",
+                        "Gagal membuka Main Layout: " + e.getMessage());
             }
 
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } else {
 
-            showAlert(Alert.AlertType.ERROR, "Database Error",
-                    "Gagal terhubung ke database: " + e.getMessage());
+            showAlert(Alert.AlertType.ERROR, "Login Gagal",
+                    "Username atau Password salah!");
         }
     }
 
     @FXML
     private void handleGoToRegister() {
+
         try {
+
             FXMLLoader loader = new FXMLLoader(
-                    getClass().getResource("/com/kosmanager/RegisterView.fxml")
+                    getClass().getResource(
+                            "/com/kosmanager/RegisterView.fxml")
             );
 
             Parent root = loader.load();
 
             Stage stage = (Stage) txtUsername.getScene().getWindow();
+
             stage.setScene(new Scene(root));
             stage.setTitle("Register Kos Manager");
 
         } catch (Exception e) {
+
             e.printStackTrace();
 
             showAlert(Alert.AlertType.ERROR, "Error",
@@ -109,7 +104,9 @@ public class LoginController {
         }
     }
 
-    private void showAlert(Alert.AlertType type, String title, String header) {
+    private void showAlert(Alert.AlertType type,
+                           String title, String header) {
+
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(header);
