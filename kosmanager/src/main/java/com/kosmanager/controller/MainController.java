@@ -50,6 +50,7 @@ public class MainController {
             List<Button> semua = List.of(btnDashboard, btnKelolaKamar, btnKelolaPenyewa, btnTransaksiSewa, btnPembayaran);
             for (Button b : semua) b.setStyle(b == aktif ? AKTIF : BIASA);
         } catch (RuntimeException ex) {
+            ex.printStackTrace();
             Alerts.error(ex.getMessage());
         }
     }

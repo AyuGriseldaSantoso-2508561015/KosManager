@@ -18,30 +18,44 @@ public final class Navigator {
     private Navigator() {
     }
 
-    // menyimpan jendela utama aplikasi
+    // Menyimpan jendela utama aplikasi
     public static void init(Stage primaryStage) {
         stage = primaryStage;
     }
 
-    // membuat loader untuk file FXML
+    // Membuat loader untuk file FXML
     public static FXMLLoader loader(String namaFile) {
-        String path = "/com/kosmanager/view/" + namaFile + ".fxml";
-        return new FXMLLoader(Navigator.class.getResource(path));
+        String path = "/com/kosmanager/" + namaFile + ".fxml";
+
+        return new FXMLLoader(
+                Navigator.class.getResource(path)
+        );
     }
 
-    // memuat halaman FXML
+    // Memuat halaman FXML
     public static Parent muat(String namaFile) {
         try {
-            return loader(namaFile).load();
+            FXMLLoader fxmlLoader = loader(namaFile);
+
+            if (fxmlLoader.getLocation() == null) {
+                throw new IllegalStateException(
+                        "File FXML tidak ditemukan: " + namaFile
+                );
+            }
+
+            return fxmlLoader.load();
+
         } catch (IOException e) {
             throw new IllegalStateException(
-                    "Gagal memuat halaman " + namaFile, e);
+                    "Gagal memuat halaman " + namaFile, e
+            );
         }
     }
 
-    // menampilkan halaman pada jendela utama
+    // Menampilkan halaman pada jendela utama
     public static void tampilkan(String namaFile, String judul,
                                  double lebar, double tinggi) {
+
         Parent root = muat(namaFile);
 
         stage.setScene(new Scene(root, lebar, tinggi));
@@ -49,11 +63,15 @@ public final class Navigator {
         stage.centerOnScreen();
     }
 
-    // menghubungkan kolom tabel dengan data
+    // Menghubungkan kolom tabel dengan data
     @SuppressWarnings("unchecked")
-    public static <T> void kolom(TableView<T> tabel, int indeks, Function<T, String> pengambilData) {
+    public static <T> void kolom(
+            TableView<T> tabel,
+            int indeks,
+            Function<T, String> pengambilData) {
 
-        TableColumn<T, String> kolom = (TableColumn<T, String>) tabel.getColumns().get(indeks);
+        TableColumn<T, String> kolom =
+                (TableColumn<T, String>) tabel.getColumns().get(indeks);
 
         kolom.setCellValueFactory(data ->
                 new SimpleStringProperty(

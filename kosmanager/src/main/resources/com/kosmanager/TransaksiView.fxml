@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kosmanager.controller.TransaksiController"><padding><Insets bottom="20" left="24" right="24" top="20" /></padding>
+<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.TransaksiController"><padding><Insets bottom="20" left="24" right="24" top="20" /></padding>
    <VBox spacing="2">
    <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" text="Transaksi Sewa" />
    <Label style="-fx-font-size: 12px; -fx-text-fill: #64748B;" text="Catat penyewaan kamar baru" />

@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import java.lang.String?>
 
-<VBox fx:controller="kosmanager.controller.DashboardController" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" spacing="16" prefWidth="860" prefHeight="640" style="-fx-background-color: #F4F6FA;"><padding><Insets top="20" right="24" bottom="20" left="24" /></padding>
+<VBox fx:controller="com.kosmanager.controller.DashboardController" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" spacing="16" prefWidth="860" prefHeight="640" style="-fx-background-color: #F4F6FA;"><padding><Insets top="20" right="24" bottom="20" left="24" /></padding>
    <VBox spacing="2">
    <Label text="Dashboard" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" />
    <Label text="Ringkasan kondisi kos hari ini" style="-fx-font-size: 12px; -fx-text-fill: #64748B;" />
