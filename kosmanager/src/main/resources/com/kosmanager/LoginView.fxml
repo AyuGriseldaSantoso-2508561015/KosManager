@@ -8,27 +8,27 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.LoginController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #E7EBD9;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.LoginController">
    <children>
-      <Label graphicTextGap="20.0" layoutX="206.0" layoutY="14.0" text="KosManager Login" textFill="#7c0fff">
+      <Label graphicTextGap="20.0" layoutX="206.0" layoutY="14.0" text="KosManager Login" textFill="#1a7f46">
          <font>
             <Font name="Dubai Medium" size="25.0" />
          </font>
       </Label>
-      <Label layoutX="162.0" layoutY="66.0" text="Username" textFill="#7c0fff" textOverrun="CLIP">
+      <Label layoutX="162.0" layoutY="66.0" text="Username" textFill="#1a7f46" textOverrun="CLIP">
          <font>
             <Font name="System Bold" size="13.600000381469727" />
          </font></Label>
-      <Label layoutX="164.0" layoutY="149.0" text="Password" textFill="#7c0fff">
+      <Label layoutX="164.0" layoutY="149.0" text="Password" textFill="#1a7f46">
          <font>
             <Font name="System Bold" size="13.600000381469727" />
          </font></Label>
       <TextField fx:id="txtUsername" layoutX="162.0" layoutY="86.0" prefHeight="30.0" prefWidth="266.0" promptText="Masukkan Username" />
       <PasswordField fx:id="txtPassword" layoutX="162.0" layoutY="169.0" prefHeight="30.0" prefWidth="266.0" promptText="Masukkan Password" />
-      <Button fx:id="btnLogin" layoutX="162.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #7c0fff;" text="Login" textFill="WHITE">
+      <Button fx:id="btnLogin" layoutX="162.0" layoutY="232.0" mnemonicParsing="false" onAction="#handleLogin" prefHeight="30.0" prefWidth="266.0" style="-fx-background-color: #1A7F46;" text="Login" textFill="WHITE">
          <font>
             <Font name="Dubai Medium" size="16.0" />
          </font></Button>
-      <Hyperlink fx:id="linkRegister" layoutX="304.0" layoutY="285.0" onAction="#handleGoToRegister" text="Belum punya akun? Daftar disini" />
+      <Hyperlink fx:id="linkRegister" layoutX="304.0" layoutY="285.0" onAction="#handleGoToRegister" text="Belum punya akun? Daftar disini" textFill="#1a7f46" />
    </children>
 </AnchorPane>

@@ -9,82 +9,50 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="700.0" prefWidth="1100.0"
-    xmlns="http://javafx.com/javafx/21"
-    xmlns:fx="http://javafx.com/fxml/1"
-    fx:controller="com.kosmanager.controller.MainController">
+<BorderPane prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.MainController">
 
     <top>
-        <HBox prefHeight="56.0"
-              style="-fx-background-color: white;">
+        <HBox prefHeight="56.0" style="-fx-background-color: #1A7F46;">
             <padding>
-                <Insets top="24" right="24" bottom="24" left="24"/>
+                <Insets bottom="24" left="24" right="24" top="24" />
             </padding>
 
-            <Label fx:id="lblHalaman"
-                   text="Dashboard"
-                   prefWidth="800"
-                   style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <Label fx:id="lblHalaman" prefWidth="800" style="-fx-font-size: 16px; -fx-font-weight: bold;" text="Dashboard" textFill="WHITE" />
 
-            <Region HBox.hgrow="ALWAYS"/>
+            <Region HBox.hgrow="ALWAYS" />
 
-            <Label fx:id="lblUser" text="Hello, Admin"/>
+            <Label fx:id="lblUser" text="Hello, Admin" />
         </HBox>
     </top>
 
     <left>
-        <VBox prefWidth="210" spacing="4"
-              style="-fx-background-color: #263B50;">
+        <VBox prefWidth="210" spacing="4" style="-fx-background-color: #1A7F46;">
             <padding>
-                <Insets top="20" right="12" bottom="20" left="12"/>
+                <Insets bottom="20" left="12" right="12" top="20" />
             </padding>
 
-            <Label text="KosManager"
-                   style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: white;" text="KosManager" />
 
-            <Region prefHeight="16"/>
+            <Region prefHeight="16" />
 
-            <Button fx:id="btnDashboard"
-                    text="Dashboard"
-                    maxWidth="Infinity"
-                    prefHeight="38"
-                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;"/>
+            <Button fx:id="btnDashboard" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;" text="Dashboard" />
 
-            <Button fx:id="btnKelolaKamar"
-                    text="Kelola Kamar"
-                    maxWidth="Infinity"
-                    prefHeight="38"
-                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;"/>
+            <Button fx:id="btnKelolaKamar" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;" text="Kelola Kamar" />
 
-            <Button fx:id="btnKelolaPenyewa"
-                    text="Kelola Penyewa"
-                    maxWidth="Infinity"
-                    prefHeight="38"
-                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;"/>
+            <Button fx:id="btnKelolaPenyewa" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;" text="Kelola Penyewa" />
 
-            <Button fx:id="btnTransaksiSewa"
-                    text="Transaksi Sewa"
-                    maxWidth="Infinity"
-                    prefHeight="38"
-                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;"/>
+            <Button fx:id="btnTransaksiSewa" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;" text="Transaksi Sewa" />
 
-            <Button fx:id="btnPembayaran"
-                    text="Pembayaran &amp; Riwayat"
-                    maxWidth="Infinity"
-                    prefHeight="38"
-                    style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;"/>
+            <Button fx:id="btnPembayaran" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: transparent; -fx-text-fill: white; -fx-alignment: CENTER_LEFT;" text="Pembayaran &amp; Riwayat" />
 
-            <Region VBox.vgrow="ALWAYS"/>
+            <Region VBox.vgrow="ALWAYS" />
 
-            <Button fx:id="btnLogout"
-                    text="Logout"
-                    maxWidth="Infinity"
-                    prefHeight="38"/>
+            <Button fx:id="btnLogout" maxWidth="Infinity" prefHeight="38" style="-fx-background-color: #44B37E;" text="Logout" textFill="WHITE" />
         </VBox>
     </left>
 
     <center>
-        <StackPane fx:id="contentArea"/>
+        <StackPane fx:id="contentArea" style="-fx-background-color: #E7EBD9;" />
     </center>
 
 </BorderPane>
