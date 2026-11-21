@@ -9,19 +9,10 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640.0"
-      prefWidth="1000.0"
-      spacing="16.0"
-      style="-fx-background-color: #F4F6FA;"
-      xmlns="http://javafx.com/javafx/26"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="com.kosmanager.controller.PenyewaController">
+<VBox prefHeight="640.0" prefWidth="1000.0" spacing="16.0" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.PenyewaController">
 
     <padding>
-        <Insets bottom="20.0"
-                left="24.0"
-                right="24.0"
-                top="20.0"/>
+        <Insets bottom="20.0" left="24.0" right="24.0" top="20.0" />
     </padding>
 
     <!-- JUDUL -->
@@ -29,11 +20,9 @@
 
         <children>
 
-            <Label text="Kelola Penyewa"
-                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;"/>
+            <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" text="Kelola Penyewa" />
 
-            <Label text="Data identitas penyewa kos"
-                   style="-fx-font-size: 12px; -fx-text-fill: #64748B;"/>
+            <Label style="-fx-font-size: 12px; -fx-text-fill: #64748B;" text="Data Identitas Penyewa Kos" />
 
         </children>
     </VBox>
@@ -48,31 +37,24 @@
 
                 <children>
 
-                    <TextField fx:id="txtCariPenyewa"
-                               promptText="Cari nama atau nomor WhatsApp..."/>
+                    <TextField fx:id="txtCariPenyewa" promptText="Cari nama atau nomor WhatsApp..." />
 
-                    <TableView fx:id="tblPenyewa"
-                               HBox.hgrow="ALWAYS"
-                               VBox.vgrow="ALWAYS">
+                    <TableView fx:id="tblPenyewa" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS">
 
                         <columns>
 
-                            <TableColumn prefWidth="50.0"
-                                         text="ID"/>
+                            <TableColumn prefWidth="50.0" text="ID" />
 
-                            <TableColumn prefWidth="200.0"
-                                         text="Nama"/>
+                            <TableColumn prefWidth="200.0" text="Nama" />
 
-                            <TableColumn prefWidth="150.0"
-                                         text="No. WhatsApp"/>
+                            <TableColumn prefWidth="150.0" text="No. WhatsApp" />
 
-                            <TableColumn prefWidth="170.0"
-                                         text="No. KTP"/>
+                            <TableColumn prefWidth="170.0" text="No. KTP" />
 
                         </columns>
 
                         <columnResizePolicy>
-                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                         </columnResizePolicy>
 
                     </TableView>
@@ -81,31 +63,22 @@
             </VBox>
 
             <!-- FORM PENYEWA -->
-            <VBox minWidth="280.0"
-                  prefWidth="280.0"
-                  spacing="12.0"
-                  style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
+            <VBox minWidth="280.0" prefWidth="280.0" spacing="12.0" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
 
                 <padding>
-                    <Insets bottom="16.0"
-                            left="16.0"
-                            right="16.0"
-                            top="16.0"/>
+                    <Insets bottom="16.0" left="16.0" right="16.0" top="16.0" />
                 </padding>
 
                 <children>
 
-                    <Label text="Form Penyewa"
-                           style="-fx-font-size: 15px; -fx-font-weight: bold;"/>
+                    <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Form Penyewa" />
 
                     <VBox spacing="4.0">
                         <children>
 
-                            <Label text="Nama Lengkap"
-                                   style="-fx-font-size: 12px; -fx-text-fill: #475569;"/>
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="Nama Lengkap" />
 
-                            <TextField fx:id="txtNama"
-                                       promptText="Nama penyewa"/>
+                            <TextField fx:id="txtNama" promptText="Nama penyewa" />
 
                         </children>
                     </VBox>
@@ -113,11 +86,9 @@
                     <VBox spacing="4.0">
                         <children>
 
-                            <Label text="No. WhatsApp"
-                                   style="-fx-font-size: 12px; -fx-text-fill: #475569;"/>
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="No. WhatsApp" />
 
-                            <TextField fx:id="txtNoWa"
-                                       promptText="Contoh: 081234567890"/>
+                            <TextField fx:id="txtNoWa" promptText="Contoh: 081234567890" />
 
                         </children>
                     </VBox>
@@ -125,34 +96,20 @@
                     <VBox spacing="4.0">
                         <children>
 
-                            <Label text="No. KTP"
-                                   style="-fx-font-size: 12px; -fx-text-fill: #475569;"/>
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="No. KTP" />
 
-                            <TextField fx:id="txtNoKtp"
-                                       promptText="16 digit"/>
+                            <TextField fx:id="txtNoKtp" promptText="16 digit" />
 
                         </children>
                     </VBox>
 
-                    <Button fx:id="btnTambahPenyewa"
-                            maxWidth="Infinity"
-                            style="-fx-background-color: #16A34A; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                            text="Tambah"/>
+                    <Button fx:id="btnTambahPenyewa" maxWidth="Infinity" style="-fx-background-color: #0F766E; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Tambah" />
 
-                    <Button fx:id="btnUbahPenyewa"
-                            maxWidth="Infinity"
-                            style="-fx-background-color: #F59E0B; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                            text="Ubah"/>
+                    <Button fx:id="btnUbahPenyewa" maxWidth="Infinity" style="-fx-background-color: #D97706; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Ubah" />
 
-                    <Button fx:id="btnHapusPenyewa"
-                            maxWidth="Infinity"
-                            style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                            text="Hapus"/>
+                    <Button fx:id="btnHapusPenyewa" maxWidth="Infinity" style="-fx-background-color: #DC2626; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Hapus" />
 
-                    <Button fx:id="btnBersihPenyewa"
-                            maxWidth="Infinity"
-                            style="-fx-background-color: #64748B; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;"
-                            text="Hapus Form"/>
+                    <Button fx:id="btnBersihPenyewa" maxWidth="Infinity" style="-fx-background-color: #64748B; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Hapus Form" />
 
                 </children>
 

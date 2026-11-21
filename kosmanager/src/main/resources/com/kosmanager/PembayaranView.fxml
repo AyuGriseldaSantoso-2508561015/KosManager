@@ -13,13 +13,13 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.PembayaranController">
+<VBox prefHeight="640" prefWidth="1000" spacing="16" style="-fx-background-color: #F4F6FA;" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.kosmanager.controller.PembayaranController">
    <padding>
       <Insets bottom="20" left="24" right="24" top="20" />
    </padding>
    <VBox spacing="2">
       <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #1F2A44;" text="Pembayaran dan Riwayat" />
-      <Label style="-fx-font-size: 12px; -fx-text-fill: #64748B;" text="Catat pembayaran, ubah status, dan cetak struk" />
+      <Label style="-fx-font-size: 12px; -fx-text-fill: #64748B;" text="Catat Pembayaran, Ubah Status, dan Cetak Struk" />
    </VBox>
    <HBox spacing="16" VBox.vgrow="ALWAYS">
       <VBox minWidth="320" prefWidth="320" spacing="12" style="-fx-background-color: white; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 0, 2);">
@@ -29,7 +29,7 @@
          <Label style="-fx-font-size: 15px; -fx-font-weight: bold;" text="Catat Pembayaran" />
          <VBox spacing="4">
             <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="Transaksi" />
-            <ComboBox fx:id="cbTransaksi" maxWidth="Infinity" onAction="#handlePilihTransaksi" promptText="Pilih transaksi" />
+            <ComboBox fx:id="cbTransaksi" maxWidth="Infinity" onAction="#handlePilihTransaksi" promptText="Pilih Transaksi" />
          </VBox>
          <HBox spacing="12">
             <Label fx:id="lblTagihan" style="-fx-text-fill: #475569;" text="Tagihan: Rp0" />
@@ -45,7 +45,7 @@
          </VBox>
          <VBox spacing="4">
             <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="Metode Pembayaran" />
-            <ComboBox fx:id="cbMetode" maxWidth="Infinity" promptText="Pilih metode">
+            <ComboBox fx:id="cbMetode" maxWidth="Infinity" promptText="Pilih Metode">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="Tunai" />
@@ -57,7 +57,7 @@
          </VBox>
          <VBox spacing="4">
             <Label style="-fx-font-size: 12px; -fx-text-fill: #475569;" text="Status" />
-            <ComboBox fx:id="cbStatusBayar" maxWidth="Infinity" promptText="Pilih status">
+            <ComboBox fx:id="cbStatusBayar" maxWidth="Infinity" promptText="Pilih Status">
                <items>
                   <FXCollections fx:factory="observableArrayList">
                      <String fx:value="Belum Lunas" />
@@ -66,8 +66,8 @@
                </items>
             </ComboBox>
          </VBox>
-         <Button fx:id="btnSimpanBayar" maxWidth="Infinity" onAction="#handleSimpanBayar" style="-fx-background-color: #16A34A; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Simpan Pembayaran" />
-         <Button fx:id="btnCetakStruk" maxWidth="Infinity" onAction="#handleCetakStruk" style="-fx-background-color: #2563EB; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Cetak Struk" />
+         <Button fx:id="btnSimpanBayar" maxWidth="Infinity" onAction="#handleSimpanBayar" style="-fx-background-color: #0F766E; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Simpan Pembayaran" />
+         <Button fx:id="btnCetakStruk" maxWidth="Infinity" onAction="#handleCetakStruk" style="-fx-background-color: #475569; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 6; -fx-cursor: hand;" text="Cetak Struk" />
       </VBox>
       <VBox spacing="10" HBox.hgrow="ALWAYS">
          <HBox spacing="8">
